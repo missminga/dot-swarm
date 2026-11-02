@@ -1,6 +1,6 @@
 # Reference study and verification
 
-Read on 2026-11-02. Reference clones live only under `/tmp/dot-swarm-refs`; none were vendored. This repository implements its own small typed domain, process adapters and panel.
+Read on 2026-11-02 and rechecked from fresh clones under `/tmp/dot-swarm-refs.u9JDiA`. Reference clones live only under `/tmp`; none were vendored. This repository implements its own small typed domain, process adapters and panel.
 
 | Reference | Read revision | Applied pattern |
 |---|---|---|
@@ -14,6 +14,8 @@ Read on 2026-11-02. Reference clones live only under `/tmp/dot-swarm-refs`; none
 Harness master was ahead of the published package. Runtime compatibility was verified against **0.2.1-rc.5**, not inferred from master. We used a disposable DSH install and DSH_HOME under `/tmp`, leaving the user's existing DSH profiles untouched.
 
 ## Local verification
+
+Final recheck on 2026-11-02: frozen-lockfile install, type checking, **21 passing tests**, build and tarball packaging. Both installed CLI version probes passed; both explicit missing-path probes exited 1 with actionable errors. A fresh disposable DSH profile accepted the link install and served the panel. Browser checks created Atlas (Codex) and Moss (Kimi), rendered their hierarchy edge, and completed a real Kimi ACP `/status` mission. A real Codex no-tool mission returned `DOT_SWARM_OK` with a native session ID. Cancellation after settlement is a regression case: a completed handle must never signal a stale process ID.
 
 - macOS, Node 26.10.0, pnpm 10.32.1.
 - `pnpm install`, `pnpm check`, both engine dry runs, explicit missing-binary failures.
