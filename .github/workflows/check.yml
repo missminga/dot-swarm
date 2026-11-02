@@ -9,11 +9,11 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      # pnpm version comes from package.json "packageManager" (pnpm@10.32.1).
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10.32.1
-      - uses: actions/setup-node@v4
+      # package.json engines.node is ">=22.19.0"; README recommends Node 24+.
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: pnpm

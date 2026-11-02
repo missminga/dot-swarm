@@ -1,5 +1,7 @@
 # Dot Swarm · 点与群
 
+[![Check](https://github.com/missminga/dot-swarm/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/missminga/dot-swarm/actions/workflows/check.yml)
+
 **把 Codex 与 Kimi 原生会话变成可管理的角色。平级派单与层级小队，可以同时存在。**
 
 一个可链接安装的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件包，附带本地 React 角色面板。Phase 1 支持 **Codex + Kimi**：创建角色、直接派单、小队派单、原生会话续接、输出流、状态、权限决策与取消。不是通用 LLM 聊天套壳，也不替换这两个 CLI 的登录、工具循环和原生历史。
