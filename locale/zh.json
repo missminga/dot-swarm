@@ -1,1 +1,6 @@
-{"meta":{"title":"Dot Swarm","description":"以角色卡片管理 Codex 与 Kimi 原生会话，支持平级派单与小队协作。"}}
+{
+  "meta": {
+    "title": "Dot Swarm",
+    "description": "以角色卡片管理 Codex 与 Kimi 原生会话，支持平级派单与小队协作。"
+  }
+}
