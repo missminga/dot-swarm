@@ -1,0 +1,36 @@
+{
+  "name": "dsh-dot-swarm",
+  "version": "0.1.0",
+  "description": "A quiet character workspace for native Codex and Kimi sessions in DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/missminga/dot-swarm.git" },
+  "engines": { "node": ">=22.19.0", "dsh": "0.2.1-rc.5" },
+  "packageManager": "pnpm@10.32.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./client": "./dist/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["dist", "cordis.patch.yml", "locale", "icon.svg", "README.md", "LICENSE", "docs"],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "immediately": true, "inject": ["@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-sidebar"] }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/build.mjs",
+    "dev": "tsx src/cli.ts serve",
+    "start": "node dist/cli.js serve",
+    "dry-run": "tsx src/cli.ts dry-run",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit && pnpm test && pnpm build",
+    "prepack": "pnpm build"
+  },
+  "dependencies": { "react": "^19.2.0", "react-dom": "^19.2.0", "zod": "^4.1.0" },
+  "devDependencies": { "@types/node": "^22.19.0", "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "esbuild": "^0.25.0", "tsx": "^4.20.0", "typescript": "~5.9.3" }
+}

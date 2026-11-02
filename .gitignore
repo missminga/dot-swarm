@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.dot-swarm/
+.env
+.env.*
+!.env.example
+*.log
+*.tgz
+.DS_Store
+coverage/
+playwright-report/
+test-results/
